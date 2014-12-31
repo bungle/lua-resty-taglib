@@ -114,7 +114,7 @@ function taglib:__newindex(n, v)
         assert(type(v) == "number", "track field's value should be of type number.")
         lib.taglib_tag_set_track(self[TAG], v)
     else
-        rawset(self, n, v)
+        error('invalid field.')
     end
 end
 function taglib:save()
