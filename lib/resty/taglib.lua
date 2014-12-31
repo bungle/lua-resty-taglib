@@ -8,6 +8,7 @@ local setmetatable = setmetatable
 local assert       = assert
 local rawget       = rawget
 local rawset       = rawset
+local error        = error
 ffi_cdef[[
 typedef enum {
   TagLib_File_MPEG,
