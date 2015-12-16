@@ -63,7 +63,7 @@ int taglib_audioproperties_channels(const TagLib_AudioProperties *audioPropertie
 void taglib_id3v2_set_default_text_encoding(TagLib_ID3v2_Encoding encoding);
 ]]
 local FILE, TAG, AUDIO = {}, {}, {}
-local lib = ffi_load("libtag_c")
+local lib = ffi_load "tag_c"
 local taglib = {}
 function taglib:__index(n)
     if n == "title" then
@@ -115,7 +115,7 @@ function taglib:__newindex(n, v)
         assert(type(v) == "number", "track field's value should be of type number.")
         lib.taglib_tag_set_track(self[TAG], v)
     else
-        error('invalid field.')
+        error "invalid field."
     end
 end
 function taglib:save()
